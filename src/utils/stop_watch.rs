@@ -1,5 +1,7 @@
 use std::time::Instant;
 
+use crate::errors::ApplicationError;
+
 
 
 #[derive(Debug)]
@@ -32,7 +34,7 @@ impl StopWatch{
     }
 
     pub fn running<F> (&mut self,f:F) ->&Self
-    where F:Fn(){
+    where F:Fn() ->Result<(),ApplicationError>{
         self.start();
         f();
         self.stop();
