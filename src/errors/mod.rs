@@ -2,7 +2,7 @@
 
 use thiserror::Error;
 
-#[derive(Error, Debug)]
+#[derive(Error, Debug,PartialEq, Eq)]
 pub enum ApplicationError {
     #[error("命令{0}处理失败")]
     CommandHandleError(String),

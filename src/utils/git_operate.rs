@@ -34,6 +34,6 @@ mod test{
 
     #[test]
     fn test_exist_git(){
-        assert!(git_exist());
+        assert_eq!(Ok(()),git_exist());
     }
 }

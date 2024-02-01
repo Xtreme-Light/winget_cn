@@ -36,7 +36,10 @@ impl StopWatch{
     pub fn running<F> (&mut self,f:F) ->&Self
     where F:Fn() ->Result<(),ApplicationError>{
         self.start();
-        f();
+        match f()  {
+            Ok(_) => {},
+            Err(_) => {},
+        };
         self.stop();
         self
     }
